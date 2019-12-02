@@ -1,4 +1,5 @@
 import spacy
+from spacy.symbols import ORTH, NORM
 import matplotlib.pyplot as plt
 import tkinter
 import string
@@ -104,11 +105,14 @@ def word_pos_frequency(input_data, word_list=[], pos_list=[], pos_or_word=1):
 
 
 # nlp = spacy.load('nl_core_news_sm')
+# # nlp.tokenizer.add_special_case("richting", [{ORTH: "richting", NORM: "naar"}])
+# # nlp.tokenizer.add_special_case("in de richting van", [{ORTH: "in de richting van", NORM: "naar"}])
+#
 # data = import_data('hetongelukscraped.csv', column="Artikel")
-# data = data[:150]
+# data = data[:250]
 #
 # input_data = get_location_descriptions(data, nlp)
 #
-# word_pos_location_dict4 = word_pos_frequency(input_data, pos_list=["ADP"], pos_or_word=0)
+# word_pos_location_dict4 = word_pos_frequency(input_data, pos_list=["ADP"], pos_or_word=1)
 #
 # search_pattern("ADP #loc", word_pos_location_dict4, input_data)

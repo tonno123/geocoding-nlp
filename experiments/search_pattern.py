@@ -1,7 +1,9 @@
 import spacy
 import string
+import sys
 
 from mine_location_descriptions import get_location_descriptions
+from mine_location_descriptions import ENTITY_LIST
 from import_data import import_data
 
 def search_pattern(search_str, dict, input_data):
@@ -18,7 +20,14 @@ def search_pattern(search_str, dict, input_data):
             total_span_n = len(input_data[article_n][sentence_n])
             for span_n in range(total_span_n):
                 if span_list[list_n] == span_counter:
-                    print(input_data[article_n][sentence_n][span_n].text)
+                    for token in input_data[article_n][sentence_n][span_n]:
+                        if token.pos_ == "ADP":
+                            sys.stdout.write(" " + "\033[92m" + token.text + "\033[0m")
+                        elif token.ent_type_ in ENTITY_LIST:
+                            sys.stdout.write(" " + "\033[91m" + token.text + "\033[0m")
+                        else:
+                            sys.stdout.write(" " + token.text + "\033[33m" + token.pos_ + "\033[0m")
+                    sys.stdout.write('\n')
                     if list_n == len(span_list) - 1:
                         return
                     list_n = list_n + 1
