@@ -16,6 +16,8 @@ ENTITY_LIST = ['GPE', 'FAC', 'LOC', 'NORP']
 def on_match(matcher, doc, id, matches):
     doc[matches[0][1]].pos_ = "ADP"
 
+def terhoogte_match(matcher, doc, id, matches):
+    doc[matches[0][1]+1].pos_ = "ADP"
 
 
 Span.set_extension("entities", default=[])
@@ -25,7 +27,7 @@ Span.set_extension("entities", default=[])
 # Word_distane = number of tokens before and after found entities that are included with result
 # Max_token_dist = maximum number op tokens between enities in one sentence before discriptions are considered different ans split
 # Returns: list of result split per input, and than per sentence
-def get_location_descriptions(data, nlpmodel, word_dist=3, max_token_dist=6, entity_filter=ENTITY_LIST):
+def get_location_descriptions(data, nlpmodel, word_dist=4, max_token_dist=8, entity_filter=ENTITY_LIST):
     results = []
 
 
@@ -35,6 +37,8 @@ def get_location_descriptions(data, nlpmodel, word_dist=3, max_token_dist=6, ent
 
         matcher = Matcher(nlpmodel.vocab)
         matcher.add("richting", on_match, [{"LOWER": "richting"}])
+        matcher.add("kruising", on_match, [{"LOWER": "kruising"}])
+        matcher.add("kutzooi", terhoogte_match, [{"LOWER": "ter"},{"LOWER": "hoogte"}])
 
         doc = nlpmodel(article)
 
