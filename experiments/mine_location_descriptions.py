@@ -1,4 +1,5 @@
 import spacy
+from spacy.matcher import Matcher
 
 from import_data import import_data
 from spacy.tokens import Span
@@ -11,6 +12,11 @@ from spacy.tokens import Span
 # LOC	Non-GPE locations, mountain ranges, bodies of water.
 # NORP	Nationalities or religious or political groups.
 ENTITY_LIST = ['GPE', 'FAC', 'LOC', 'NORP']
+
+def on_match(matcher, doc, id, matches):
+    doc[matches[0][1]].pos_ = "ADP"
+
+
 
 Span.set_extension("entities", default=[])
 
@@ -27,7 +33,12 @@ def get_location_descriptions(data, nlpmodel, word_dist=3, max_token_dist=6, ent
     for article in data:
         article_results = []
 
+        matcher = Matcher(nlpmodel.vocab)
+        matcher.add("richting", on_match, [{"LOWER": "richting"}])
+
         doc = nlpmodel(article)
+
+        matches = matcher(doc)
 
         for sent in doc.sents:
             sentence_results = []
