@@ -14,10 +14,25 @@ from spacy.tokens import Span
 ENTITY_LIST = ['GPE', 'FAC', 'LOC', 'NORP']
 
 def on_match(matcher, doc, id, matches):
-    doc[matches[0][1]].pos_ = "ADP"
+    if doc[matches[0][1]].text == "richting" or doc[matches[0][1]].text == "kruising":
+        # print("------------------------------------------------")
+        # print(doc[matches[0][1]], " : ", doc[matches[0][1]].pos_)
+        doc[matches[0][1]].pos_ = "ADP"
+        # print(doc[matches[0][1]], " : ", doc[matches[0][1]].pos_)
 
 def terhoogte_match(matcher, doc, id, matches):
-    doc[matches[0][1]+1].pos_ = "ADP"
+    if doc[matches[0][1]+1].text == "hoogte":
+        # print("------------------------------------------------")
+        # print(doc[matches[0][1]+1], " : ", doc[matches[0][1]+1].pos_)
+        doc[matches[0][1]+1].pos_ = "ADP"
+        # print(doc[matches[0][1]+1], " : ", doc[matches[0][1]+1].pos_)
+
+def delete_match(matcher, doc, id, matches):
+    if doc[matches[0][1]].text == "van" or doc[matches[0][1]].text == "met":
+        # print("------------------------------------------------")
+        # print(doc[matches[0][1]], " : ", doc[matches[0][1]].pos_)
+        doc[matches[0][1]].pos_ = "X"
+        # print(doc[matches[0][1]], " : ", doc[matches[0][1]].pos_)
 
 
 Span.set_extension("entities", default=[])
@@ -36,9 +51,11 @@ def get_location_descriptions(data, nlpmodel, word_dist=4, max_token_dist=8, ent
         article_results = []
 
         matcher = Matcher(nlpmodel.vocab)
+        matcher.add("van", delete_match, [{'LOWER': 'van'}])
+        matcher.add("met", delete_match, [{"LOWER":  "met"}])
         matcher.add("richting", on_match, [{"LOWER": "richting"}])
         matcher.add("kruising", on_match, [{"LOWER": "kruising"}])
-        matcher.add("kutzooi", terhoogte_match, [{"LOWER": "ter"},{"LOWER": "hoogte"}])
+        matcher.add("testtest", terhoogte_match, [{"LOWER": "ter"},{"LOWER": "hoogte"}])
 
         doc = nlpmodel(article)
 

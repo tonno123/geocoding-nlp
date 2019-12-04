@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 import tkinter
 import string
 
+
+import search_pattern as search_p
 from mine_location_descriptions import get_location_descriptions
 from import_data import import_data
 from collections import Counter
-from search_pattern import search_pattern
-
 
 def word_count():
     words = []
@@ -105,14 +105,16 @@ def word_pos_frequency(input_data, word_list=[], pos_list=[], pos_or_word=1):
 
 
 # nlp = spacy.load('nl_core_news_sm')
-# # nlp.tokenizer.add_special_case("richting", [{ORTH: "richting", NORM: "naar"}])
-# # nlp.tokenizer.add_special_case("in de richting van", [{ORTH: "in de richting van", NORM: "naar"}])
 #
 # data = import_data('hetongelukscraped.csv', column="Artikel")
-# data = data[:250]
+# data = data[:200]
 #
 # input_data = get_location_descriptions(data, nlp)
 #
 # word_pos_location_dict4 = word_pos_frequency(input_data, pos_list=["ADP"], pos_or_word=1)
 #
-# search_pattern("ADP #loc", word_pos_location_dict4, input_data)
+# search_p.show_pattern_occurrences("ADP #loc", word_pos_location_dict4, input_data)
+#
+# span_locations_ADPloc = search_p.adposition_frequencies_per_pattern("ADP #loc", word_pos_location_dict4, input_data)
+#
+# search_p.show_pattern_occurrences("in #loc", span_locations_ADPloc, input_data)
