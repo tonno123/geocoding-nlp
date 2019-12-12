@@ -56,7 +56,8 @@ def word_pos_frequency(input_data, word_list=[], pos_list=[], pos_or_word=1):
                 current_span = input_data[article_n][sentence_n][span_n]
                 span_str = current_span.text.strip('.')
                 for entity in current_span._.entities:
-                    span_str = span_str.replace(entity.text, "#loc", 1)
+                    if entity.label_ in ['GPE', 'FAC', 'LOC', 'NORP']: # nodig?
+                        span_str = span_str.replace(entity.text, "#loc", 1)
 
 
                 # in case one or more words are entered
@@ -79,6 +80,10 @@ def word_pos_frequency(input_data, word_list=[], pos_list=[], pos_or_word=1):
                     if all(i == "#loc" for i in new_span.split()) or not "#loc" in new_span:
                         new_span = ''
                 new_span = new_span[:-1]
+
+                # deleting all adpositions after the last detected toponym
+                new_span = new_span.rpartition("#loc")  # more filtering required here
+                new_span = new_span[0] + new_span[1]
 
                 # this saves all word and POS-tag combinations in a dict, where
                 # the key is the combination itself, and the key is a list of
@@ -104,17 +109,17 @@ def word_pos_frequency(input_data, word_list=[], pos_list=[], pos_or_word=1):
     return span_location
 
 
-# nlp = spacy.load('nl_core_news_sm')
-#
-# data = import_data('hetongelukscraped.csv', column="Artikel")
-# data = data[:200]
-#
-# input_data = get_location_descriptions(data, nlp)
-#
-# word_pos_location_dict4 = word_pos_frequency(input_data, pos_list=["ADP"], pos_or_word=1)
-#
-# search_p.show_pattern_occurrences("ADP #loc", word_pos_location_dict4, input_data)
-#
-# span_locations_ADPloc = search_p.adposition_frequencies_per_pattern("ADP #loc", word_pos_location_dict4, input_data)
-#
-# search_p.show_pattern_occurrences("in #loc", span_locations_ADPloc, input_data)
+nlp = spacy.load('nl_core_news_sm')
+
+data = import_data('hetongelukscraped.csv', column="Artikel")
+data = data[:300]
+
+input_data = get_location_descriptions(data, nlp)
+
+word_pos_location_dict4 = word_pos_frequency(input_data, pos_list=["ADP"], pos_or_word=1)
+
+search_p.show_pattern_occurrences("ADP #loc", word_pos_location_dict4, input_data)
+
+span_locations_ADPloc = search_p.adposition_frequencies_per_pattern("ADP #loc", word_pos_location_dict4, input_data)
+
+search_p.show_pattern_occurrences("naar #loc", span_locations_ADPloc, input_data)

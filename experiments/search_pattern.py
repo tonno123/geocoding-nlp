@@ -19,6 +19,7 @@ def show_pattern_occurrences(search_str, dict, input_data):
     total_article_n = len(input_data)
     for article_n in range(total_article_n):
         total_sentence_n = len(input_data[article_n])
+        print("----------------------------------------------------------")
         for sentence_n in range(total_sentence_n):
             total_span_n = len(input_data[article_n][sentence_n])
             for span_n in range(total_span_n):
@@ -77,6 +78,6 @@ def adposition_frequencies_per_pattern(search_str, dict, input_data):
 
                 span_counter = span_counter + 1
     adp_frequency = pd.DataFrame(Counter(all_spans).most_common(50), columns=['pattern', 'frequency'])
-    adp_frequency.plot(kind='bar', figsize=[13,6], position=0.65, x='pattern', y='frequency')
+    adp_frequency.plot(kind='bar', figsize=[13,6], position=0.65, x='pattern', y='frequency', bottom=0.20)
     plt.show()
     return span_locations
