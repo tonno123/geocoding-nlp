@@ -1,20 +1,5 @@
-import spacy
 
-#import search_pattern as search_p
-from mine_location_descriptions import get_location_descriptions
-from import_data import import_data
-from collections import Counter
-
-from geopy.geocoders import Nominatim
-geolocator = Nominatim(user_agent="geoRelationshipExtracter")
-
-nlp = spacy.load('nl_core_news_sm')
-data = import_data('hetongelukscraped.csv', column="Artikel")
-data = data[:200]
-
-input_data = get_location_descriptions(data, nlp)
-
-MARKER_WORDS = ['in', 'op', 'over', 'bij', 'hoogte', 'richting', 'naar', 'tussen', 'kruising']
+MARKER_WORDS = ['in', 'op', 'over', 'bij', 'hoogte', 'richting', 'naar', 'tussen', 'kruising','kruispunt','te']
 
 def extractADPLOCCombination(input_data):
     articlelist = []
@@ -23,6 +8,7 @@ def extractADPLOCCombination(input_data):
         sentencelist = []
         total_sentence_n = len(input_data[article_n])
         for sentence_n in range(total_sentence_n):
+            print(input_data[article_n][sentence_n])
             spanlist = []
             total_span_n = len(input_data[article_n][sentence_n])
             for span_n in range(total_span_n):
@@ -43,9 +29,9 @@ def extractADPLOCCombination(input_data):
                     if not prev_word_type == 'LOC':
                         loccounter = loccounter + 1
                         spanlist2.append([[],[]])
-                    spanlist2[loccounter][1].insert(0, word)
+                    spanlist2[loccounter][1].insert(0, word.text)
                     prev_word_type = 'LOC'
-                elif word.pos_ == 'ADP' or word.text in ['richting', 'hoogte', 'kruising']:
+                elif word.pos_ == 'ADP' or word.text in ['richting', 'hoogte', 'kruising', 'kruispunt']:
                     spanlist2[loccounter][0].insert(0, word)
                     prev_word_type = 'ADP'
                 elif word.startswith('CNJ') and prev_word_type == 'LOC': #correct? Geen CONJ voor LOC zonder dat het tussen twee LOC's staat?
@@ -75,15 +61,17 @@ def chooseADP(ADPlist):
 
 def predicateSwitcher(ADP):
     switcher = {
-        'in'        : 'IN',
-        'op'        : 'IN',
-        'over'      : 'IN',
+        'op'        : 'ON',
+        'over'      : 'ON',
+        'te'        : 'IN_LOC',
+        'in'        : 'IN_LOC',
         'bij'       : 'AT',
         'hoogte'    : 'AT',
         'richting'  : 'HEADING',
         'naar'      : 'HEADING',
         'tussen'    : 'BETWEEN',
         'kruising'  : 'INTERSECT',
+        'kruispunt' : 'INTERSECT',
     }
     return switcher.get(ADP)
 
@@ -98,25 +86,37 @@ def NLtoPredicate(articlelist):
                 if bestADP:
                     loc_list.append([predicateSwitcher(bestADP), loc_mention[1]])
             if loc_list: sent_pred_list.append(loc_list)
+            print(sentence)
         print(sent_pred_list)
         print("==========================================")
         article_pred_list.append(sent_pred_list)
     return article_pred_list
 
-            #
-            # search_query = ''
-            # for location in loc_list:
-            #     if location[0] == 'IN':
-            #         search_query = search_query + location[1]
-            # location = geolocator.geocode(search_query)
-            # print(location.address)
-            # print(location.latitude, location.longitude)
-            # print(location.raw.get('type'))
-            # print(location.raw)
+def matchSentence(match, article):
+    for sentence in article:
+        for location in sentence:
+            if match == location:
+                return True
+    return False
 
-# articlelist = extractADPLOCCombination(input_data)
-# article_pred_list = NLtoPredicate(articlelist)
+def deleteDuplicateEntries(articlelist):
+    new_articlelist = []
+    for article in articlelist:
+        i = 0
+        while i < len(article):
+            article_copy = article[:i] + article[(i+1):]
+            if matchSentence(article[i][0], article_copy):
+                article = article_copy
+            else:
+                i = i+1
+        else:
+            i = i+1
+            new_articlelist.append(article)
+    return new_articlelist
 
+#articlelist = extractADPLOCCombination(input_data)
+#article_pred_list = NLtoPredicate(articlelist)
+#print(article_pred_list)
 # words = []
 # span_counter = 0
 # span_location = {}

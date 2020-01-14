@@ -6,7 +6,7 @@ data_location = '../data/'
 # TODO: add compatability for more file types
 # General import function to import data files
 # Returns pandas DataFrame
-def import_data(file, filetype='csv', column="", usecols=[]):
+def import_data_complex(file, filetype='csv', column="", usecols=[], complex=""):
     loc = data_location + file
 
     if usecols:
@@ -15,15 +15,17 @@ def import_data(file, filetype='csv', column="", usecols=[]):
         df = pd.read_csv(loc, skipinitialspace=True)
 
     # Remove Whitespaces
-    print(df)
     df = df.apply(lambda x: x.str.replace("\t", ""))
     df = df.apply(lambda x: x.str.replace("\r", ""))
     df = df.apply(lambda x: x.str.replace("\n", ""))
 
-    if column:
-        df = df[column]
+    if complex:
+        new_df = df.loc[df['Complex'] == complex]
 
-    return df
+    if column:
+        specific_column = new_df[column]
+
+    return specific_column
 
 # Test
 if __name__ == '__main__':

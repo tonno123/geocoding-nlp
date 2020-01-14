@@ -8,6 +8,8 @@ import string
 import search_pattern as search_p
 from mine_location_descriptions import get_location_descriptions
 from import_data import import_data
+from import_data_complex import import_data_complex
+
 from collections import Counter
 
 def word_count():
@@ -111,15 +113,19 @@ def word_pos_frequency(input_data, word_list=[], pos_list=[], pos_or_word=1):
 
 nlp = spacy.load('nl_core_news_sm')
 
-data = import_data('hetongelukscraped.csv', column="Artikel")
-data = data[:300]
+data = import_data_complex('flitsservice_trainset.csv', column="Artikel", complex='N')
+print(data)
+print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+
+data = data[:151]
 
 input_data = get_location_descriptions(data, nlp)
 
-word_pos_location_dict4 = word_pos_frequency(input_data, pos_list=["ADP"], pos_or_word=1)
+word_pos_location_dict4 = word_pos_frequency(input_data, pos_list=["ADP"], pos_or_word=0)
 
 search_p.show_pattern_occurrences("ADP #loc", word_pos_location_dict4, input_data)
 
 span_locations_ADPloc = search_p.adposition_frequencies_per_pattern("ADP #loc", word_pos_location_dict4, input_data)
 
-search_p.show_pattern_occurrences("naar #loc", span_locations_ADPloc, input_data)
+#search_p.show_pattern_occurrences("naar #loc", span_locations_ADPloc, input_data)
