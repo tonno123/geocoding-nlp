@@ -4,6 +4,7 @@ import time
 import math
 from geopy.exc import GeocoderTimedOut
 from overpy.exception import OverpassTooManyRequests
+from overpy.exception import OverpassGatewayTimeout
 from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 from geopy.distance import geodesic
@@ -14,6 +15,7 @@ nom = Nominatim(user_agent="geocaching_thesis")
 api = overpy.Overpass()
 
 NominatimResultList = []
+OverpassResultList = []
 
 def isHighway(roadname):
     if roadname[:1] is 'A' or roadname[:1] is 'N':
@@ -45,7 +47,7 @@ def orderSent(sentence):
 #     else:
 #         return 0, ADP_list[1:]
 
-def OverpassSearch(query, waittime=2):
+def OverpassSearch(query, waittime=3):
     try:
         query_result = api.query(query)
         result =  query_result
@@ -53,9 +55,16 @@ def OverpassSearch(query, waittime=2):
         print("Overpass receives too many requests, waiting", waittime, "seconds.")
         time.sleep(waittime)
         result = OverpassSearch(query,waittime*2)
+    except OverpassGateWayTimeout:
+        print("Overpass gateway overload, waiting", waittime, "seconds.")
+        time.sleep(waittime)
+        result = OverpassSearch(query,waittime*2)
     return result
 
 def OverpassQuery(roadname, area="Nederland"):
+    for element in OverpassResultList:
+        if element[0] == roadname:
+            return element[1]
     if isinstance(roadname, list):
         [road1, road2] = roadname
         if isHighway(road1):
@@ -87,10 +96,8 @@ def OverpassQuery(roadname, area="Nederland"):
         );
         out center;
         """ % (area, road_type, roadname)
-        # result_list = []
-        # for way in query_result.ways:
-        #     result_list.append([way.center_lat, way.center_lon])
     result = OverpassSearch(query)
+    OverpassResultList.append([roadname, result])
     return result
 
 def NominatimSearch(location):
@@ -126,12 +133,10 @@ def intersect(roads, boundingbox_list_sent, way_list_sent):
         return boundingbox_list_sent, way_list_sent
 
     query_result = OverpassQuery(roads)
-    print("query_result:",query_result.nodes)
     if query_result:
         result_list = []
         for node in query_result.nodes:
             result_list.append([float(node.lat), float(node.lon)])
-        print(result_list)
         if result_list:
             way_list_sent.append(['crossroads', result_list])
     return boundingbox_list_sent,way_list_sent
@@ -144,33 +149,38 @@ def getBestBetweenLocation(search_result):
             return (float(search_result[i].raw.get('lat')), float(search_result[i].raw.get('lon')))
     return (float(search_result[0].raw.get('lat')), float(search_result[0].raw.get('lon')))
 
-
 def between(location, bbox_list_sent, way_list_sent):
+    if len(location) < 2:
+        return bbox_list_sent,way_list_sent
     [location1, location2] = location
     searchresult1 = NominatimSearch(location1)
     time.sleep(1.1)
     searchresult2 = NominatimSearch(location2)
-    lat1,lon1 = getBestBetweenLocation(searchresult1)
-    lat2,lon2 = getBestBetweenLocation(searchresult2)
+    if searchresult1 and searchresult2:
+        lat1,lon1 = getBestBetweenLocation(searchresult1)
+        lat2,lon2 = getBestBetweenLocation(searchresult2)
 
-    angle = math.atan2(lon2-lon1,lat2-lat1)
-    distance = geodesic((lat1,lon1),(lat2,lon2))/math.sqrt(2)
-    point1_x,point1_y,_ = distance.destination(point=[lat1,lon1], bearing=math.degrees(angle)+45)
-    point2_x,point2_y,_ = distance.destination(point=[lat1, lon1], bearing=math.degrees(angle)-45)
-    bbox_list_sent.append(['between',[(point1_x,point1_y),(lat1,lon1),(point2_x,point2_y),(lat2,lon2)]])
+        angle = math.atan2(lon2-lon1,lat2-lat1)
+        distance = geodesic((lat1,lon1),(lat2,lon2))/math.sqrt(2)
+        point1_x,point1_y,_ = distance.destination(point=[lat1,lon1], bearing=math.degrees(angle)+45)
+        point2_x,point2_y,_ = distance.destination(point=[lat1, lon1], bearing=math.degrees(angle)-45)
+        bbox_list_sent.append(['between',[(point1_x,point1_y),(lat1,lon1),(point2_x,point2_y),(lat2,lon2)]])
     return bbox_list_sent, way_list_sent
 
 def in_loc(location, boundingbox_list_sent, way_list_sent):
     place = []
     result_list = NominatimSearch(location)
-    for result in result_list:
-        if result.raw.get('class') == 'boundary':
-            boundingbox_list_sent.append(['in', result.raw.get('boundingbox')])
-            return boundingbox_list_sent, way_list_sent
-        elif result.raw.get('class') == 'place' and not place:
-            place = result.raw.get('boundingbox')
-    if place:
-        boundingbox_list_sent.append(['in', place.raw.get('boundingbox')])
+    if result_list:
+        for result in result_list:
+            if result.raw.get('class') == 'boundary':
+                boundingbox_list_sent.append(['in', result.raw.get('boundingbox')])
+                return boundingbox_list_sent, way_list_sent
+            elif result.raw.get('class') == 'place' and not place:
+                place = result.raw.get('boundingbox')
+        if place:
+            boundingbox_list_sent.append(['in', place])
+        else:
+            boundingbox_list_sent.append(['in', result_list[0].raw.get('boundingbox')])
     return boundingbox_list_sent, way_list_sent
 
 def heading(roadname,bbox_list_sent,way_list_sent):
@@ -189,18 +199,18 @@ def on(roadname, boundingbox_list_sent, way_list_sent):
                 way_list_sent.append(["road", roadname[0], result])
     return boundingbox_list_sent, way_list_sent
 
-
 def at(location, boundingbox_list_sent, way_list_sent):
     place = []
     result_list = NominatimSearch(location)
-    for result in result_list:
-        if result.raw.get('class') == 'boundary':
-            boundingbox_list_sent.append(['at', result.raw.get('boundingbox')])
-            return boundingbox_list_sent, way_list_sent
-        elif result.raw.get('class') == 'place' and not place:
-            place = result.raw.get('boundingbox')
-    if place:
-        boundingbox_list_sent.append(['at', place.raw.get('boundingbox')])
+    if result_list:
+        for result in result_list:
+            if result.raw.get('class') == 'boundary':
+                boundingbox_list_sent.append(['at', result.raw.get('boundingbox')])
+                return boundingbox_list_sent, way_list_sent
+            elif result.raw.get('class') == 'place' and not place:
+                place = result.raw.get('boundingbox')
+        if place:
+            boundingbox_list_sent.append(['at', place])
     return boundingbox_list_sent, way_list_sent
 
 def mergeLists(bbox_list, way_list):
@@ -209,9 +219,9 @@ def mergeLists(bbox_list, way_list):
 
         if way[0] is 'road' or way[0] is 'crossroads':
             for bbox in bbox_list:
-                result = CoordsInBoundingbox(way[2], bbox[1])
+                result = CoordsInBoundingbox(way[-1], bbox[1])
                 if result:
-                    way[2] = result
+                    way[-1] = result
                     bbox_list.pop(bbox_list.index(bbox))
 
         elif way[0] is 'highway':
@@ -238,7 +248,7 @@ def printResults(bbox_list,way_list):
     for location in bbox_list:
         print("Bounding box:", location[-1])
     for location in way_list:
-        print("Road coordinates:",location[-2])
+        print("Road coordinates:",location[-2], "***********")
         for coord in location[-1]:
             print(coord[0],coord[1])
 
@@ -251,17 +261,9 @@ def findLocations(article):
         sent = orderSent(sent)
         ADP_list = getADPs(sent)
         for i in range(len(ADP_list)):
-            print("sentence part: ", sent[i])
             boundingbox_list_sent, way_list_sent = eval(ADP_list[i].lower())(sent[i][1], boundingbox_list_sent, way_list_sent)
-            print("bbox:", boundingbox_list_sent)
-            print("ways:",way_list_sent)
-            print("--------------------------------------------------------------")
         boundingbox_list_sent, way_list_sent = mergeLists(boundingbox_list_sent, way_list_sent)
         boundingbox_list.extend(boundingbox_list_sent)
         way_list.extend(way_list_sent)
-        print("way_list extended:",way_list)
-        print("bbox extended:",boundingbox_list)
-        print("=================================================================")
-        print("=================================================================")
     boundingbox_list, way_list = mergeLists(boundingbox_list, way_list)
     printResults(boundingbox_list,way_list)

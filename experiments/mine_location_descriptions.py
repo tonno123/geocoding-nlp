@@ -103,7 +103,7 @@ def get_location_descriptions(data, nlpmodel, word_dist=4, max_token_dist=8, ent
             article_results.append(sentence_results)
 
         if len(article_results) > 0:
-            print(article_results)
+            #print(article_results)
             results.append(article_results)
 
     return results

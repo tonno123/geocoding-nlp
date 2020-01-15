@@ -102,6 +102,12 @@ print(r3)
 for way in r3.ways:
     print(way.center_lat, way.center_lon)
 
+from geopy.geocoders import Nominatim
+nom = Nominatim(user_agent="geocaching_thesis")
+result = nom.geocode("A12 Utrecht", country_codes='nl', exactly_one=False,limit=10000)
+for el in result:
+    print(el.raw)
+    print(el.raw.get('lat'),el.raw.get('lon'))
 
 
 article = [['a'], ['b'],['d','e'], ['b','c'], ['b'], ['c'], ['a'],['d']]
@@ -164,6 +170,8 @@ def removeDuplicateLocations(article):
 
 
 article = [['a'], ['b'],['a','d','e'], ['b','c','e'], ['b'], ['c'], ['a'],['d'],['f']]
+article[3:5]
+
 article[-1:]
 def matchSentence(match, article):
     for sentence in article:
@@ -193,3 +201,15 @@ for location in way_list:
     print(location[-1])
     for coord in location[-1]:
         print(coord[0],coord[1])
+
+# https://a.tile.openstreetmap.org/10/531/332.png
+import math
+def deg2num(lat_deg, lon_deg, zoom):
+    lat_rad = math.radians(lat_deg)
+    n = 2.0 ** zoom
+    xtile = (lon_deg + 180.0) / 360.0 * n
+    ytile = (1.0 - math.asinh(math.tan(lat_rad)) / math.pi) / 2.0 * n
+    return (xtile, ytile)
+
+result = deg2num(53.2153293,6.8388328,10)
+print(result)

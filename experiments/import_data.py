@@ -15,7 +15,7 @@ def import_data(file, filetype='csv', column="", usecols=[]):
         df = pd.read_csv(loc, skipinitialspace=True)
 
     # Remove Whitespaces
-    print(df)
+    # print(df)
     df = df.apply(lambda x: x.str.replace("\t", ""))
     df = df.apply(lambda x: x.str.replace("\r", ""))
     df = df.apply(lambda x: x.str.replace("\n", ""))

@@ -1,5 +1,7 @@
 
-MARKER_WORDS = ['in', 'op', 'over', 'bij', 'hoogte', 'richting', 'naar', 'tussen', 'kruising','kruispunt','te']
+MARKER_WORDS = ['in', 'op', 'over', 'bij', 'hoogte', 'richting', 'naar', 'tussen', 'kruising','kruispunt','te', 'splitsing']
+
+LOCATION_ENTITIES = ['GPE', 'FAC', 'LOC', 'NORP']
 
 def extractADPLOCCombination(input_data):
     articlelist = []
@@ -8,33 +10,32 @@ def extractADPLOCCombination(input_data):
         sentencelist = []
         total_sentence_n = len(input_data[article_n])
         for sentence_n in range(total_sentence_n):
-            print(input_data[article_n][sentence_n])
             spanlist = []
             total_span_n = len(input_data[article_n][sentence_n])
             for span_n in range(total_span_n):
                 for token in input_data[article_n][sentence_n][span_n]:
-                    if token.pos_ == 'ADP' or token.text in ['richting', 'hoogte', 'kruising']:
+                    if token.pos_ == 'ADP' or token.text in ['richting', 'hoogte', 'kruising','kruispunt','splitsing']:
                         spanlist.append(token)
                     #elif token.pos_ == 'CONJ':
                     #    spanlist.append('CONJ' + token.text)
-                    elif token.ent_type_ in ['GPE', 'FAC', 'LOC', 'NORP']:
+                    elif token.ent_type_ in LOCATION_ENTITIES:
                         spanlist.append(token)
             loccounter = -1
             prev_word_type = ''
             spanlist2 = []
             for word in list(reversed(spanlist)):
-                if loccounter < 0 and not word.ent_type_ in ['GPE', 'FAC', 'LOC', 'NORP']:
+                if loccounter < 0 and not word.ent_type_ in LOCATION_ENTITIES:
                     continue
-                elif word.ent_type_ in ['GPE', 'FAC', 'LOC', 'NORP']:
+                elif word.pos_ != 'ADP' and word.ent_type_ in LOCATION_ENTITIES:
                     if not prev_word_type == 'LOC':
                         loccounter = loccounter + 1
                         spanlist2.append([[],[]])
                     spanlist2[loccounter][1].insert(0, word.text)
                     prev_word_type = 'LOC'
-                elif word.pos_ == 'ADP' or word.text in ['richting', 'hoogte', 'kruising', 'kruispunt']:
+                elif word.pos_ == 'ADP' or word.text in ['richting', 'hoogte', 'kruising', 'kruispunt','splitsing']:
                     spanlist2[loccounter][0].insert(0, word)
                     prev_word_type = 'ADP'
-                elif word.startswith('CNJ') and prev_word_type == 'LOC': #correct? Geen CONJ voor LOC zonder dat het tussen twee LOC's staat?
+                elif word.text.startswith('CNJ') and prev_word_type == 'LOC': #correct? Geen CONJ voor LOC zonder dat het tussen twee LOC's staat?
                     spanlist2[loccounter][1].insert(0, '/')
                 else:
                     prev_word_type == ''
@@ -43,10 +44,7 @@ def extractADPLOCCombination(input_data):
                 #new_span = new_span.rpartition("#loc")  # more filtering required here
                 #new_span = new_span[0] + new_span[1]
             sentencelist.append(list(reversed(spanlist2)))
-        print(sentencelist)
-        print("=====================================================================")
         articlelist.append(sentencelist)
-    print(articlelist)
     return articlelist
 
 
@@ -72,6 +70,7 @@ def predicateSwitcher(ADP):
         'tussen'    : 'BETWEEN',
         'kruising'  : 'INTERSECT',
         'kruispunt' : 'INTERSECT',
+        'splitsing' : 'INTERSECT'
     }
     return switcher.get(ADP)
 
@@ -86,9 +85,6 @@ def NLtoPredicate(articlelist):
                 if bestADP:
                     loc_list.append([predicateSwitcher(bestADP), loc_mention[1]])
             if loc_list: sent_pred_list.append(loc_list)
-            print(sentence)
-        print(sent_pred_list)
-        print("==========================================")
         article_pred_list.append(sent_pred_list)
     return article_pred_list
 
