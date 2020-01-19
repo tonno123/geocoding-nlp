@@ -62,6 +62,7 @@ def get_location_descriptions(data, nlpmodel, word_dist=4, max_token_dist=8, ent
         matches = matcher(doc)
 
         for sent in doc.sents:
+            print(sent)
             sentence_results = []
 
             # Filter specified entities in 'entity_filter'
@@ -75,8 +76,13 @@ def get_location_descriptions(data, nlpmodel, word_dist=4, max_token_dist=8, ent
                 continue
 
             # Calculate pairwise index difference
+            print(ents)
+            for ent in ents:
+                print(ent.i)
             ent_index_ranges = [(ent.start, ent.end) for ent in ents]
+            print(ent_index_ranges)
             pairwise_diff = [r[0] - ent_index_ranges[i-1][1] for i,r in enumerate(ent_index_ranges)][1:]
+            print(pairwise_diff)
 
             # Check if multiple descriptions exist in sentence
             # based on MAX_TOKEN_DIST -> split
@@ -90,7 +96,7 @@ def get_location_descriptions(data, nlpmodel, word_dist=4, max_token_dist=8, ent
                 if pairwise_diff[i] > max_token_dist:
                     entities_to_progress.append(temp)
                     temp = []
-
+            print(entities_to_progress)
             # Process entities, get WORD_DIST words before and after entities
             for entities in entities_to_progress:
                 start = max(sent.start, entities[0].start - word_dist)

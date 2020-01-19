@@ -3,7 +3,7 @@ from spacy.symbols import ORTH, NORM
 import matplotlib.pyplot as plt
 import tkinter
 import string
-
+import numpy
 
 import search_pattern as search_p
 from mine_location_descriptions import get_location_descriptions
@@ -108,24 +108,40 @@ def word_pos_frequency(input_data, word_list=[], pos_list=[], pos_or_word=1):
     plt.ylabel('Frequency')
     plt.xticks(rotation=85)
     plt.show()
-    return span_location
+    return span_location, ent_freq
 
 
 nlp = spacy.load('nl_core_news_sm')
 
-data = import_data_complex('flitsservice_trainset.csv', column="Artikel", complex='N')
-print(data)
+dataN = import_data_complex('flitsservice_trainset.csv', column="Artikel", complex='N')
+dataY = import_data_complex('flitsservice_trainset.csv', column="Artikel", complex='Y')
 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-data = data[:151]
+input_dataN = get_location_descriptions(dataN, nlp)
+input_dataY = get_location_descriptions(dataY, nlp)
 
-input_data = get_location_descriptions(data, nlp)
+word_pos_location_dict4, ent_freqN = word_pos_frequency(input_dataN, pos_list=["ADP"], pos_or_word=0)
+word_pos_location_dict5, ent_freqY = word_pos_frequency(input_dataY, pos_list=["ADP"], pos_or_word=0)
 
-word_pos_location_dict4 = word_pos_frequency(input_data, pos_list=["ADP"], pos_or_word=0)
+keysY, valuesY = zip(*ent_freqY.most_common(50))
+print("keysN:", keysY)
+print("valuesN:", valuesY)
 
-search_p.show_pattern_occurrences("ADP #loc", word_pos_location_dict4, input_data)
+valuesN_list = []
+for key in keysY:
+    valuesN_list.append(ent_freqN.get(key, 0))
 
-span_locations_ADPloc = search_p.adposition_frequencies_per_pattern("ADP #loc", word_pos_location_dict4, input_data)
+
+
+plt.bar( numpy.arange(len(valuesY)) * 3, height=valuesY, color = 'red' )
+plt.bar( numpy.arange(len(valuesY)) * 3 + 1, height=valuesN_list, color = 'blue' )
+plt.subplots_adjust(left=0.07, bottom=0.35, right=0.97)
+plt.xticks(numpy.arange(len(valuesY)) * 3, keysY, rotation=80)
+plt.show()
+
+#search_p.show_pattern_occurrences("ADP #loc", word_pos_location_dict4, input_data)
+
+#span_locations_ADPloc = search_p.adposition_frequencies_per_pattern("ADP #loc", word_pos_location_dict4, input_data)
 
 #search_p.show_pattern_occurrences("naar #loc", span_locations_ADPloc, input_data)
