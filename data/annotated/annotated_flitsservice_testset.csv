@@ -3,9 +3,9 @@ Toponiemen,Locaties,,flitsservice_testset.csv
 "op N35,van Almelo,op N35,tussen [Wierden,Nijverdal],uit Slagharen,op N35","52.3572,6.6594,Almelo,1000;52.36033,6.53638,N35,1200; 52.6275010, 6.5545625,Slagharen,1000",,
 "uit Zwanenburg,in Hoofddorp,naast Kruisweg,hoogte Claus_Event_Centre, uit Amsterdam,Overbos,Spaarne Ziekenhuis"," 52.3778643, 4.7437441,Zwanenburg,500;52.32187, 4.66445,Claus_Event_Centre,100; 52.3546,4.9040,Amsterdam,500;52.31969,4.66506, Overbos, 500;52.32349,4.65301,Spaarne_ziekenhuis,300",,
 "Twello,in Twello,uit Twello,in Twello,Binnenweg,in Nijmegen,in Twello,op Binnenweg,in Twello,in Nijmegen","52.24003,6.11088,Binnenweg,150;51.8426,5.8331,Nijmegen,1000",,
-"uit Leeuwarden,op Rykswei (N355),bij Jistrum,vanaf Wyldpad_West,uit Groningen,naar UMCG,in Groningen","53.1705,5.7908,Leeuwarden,500; 53.22433, 6.04235,Wyldpad_West,100;53.2233, 6.5732 ,UMCG,250;",,
-"in Maastricht,bij Johan_Willem_Beyenlaan,in Maastricht,uit Maastricht,op Forum,in Maastricht","50.83737,5.71386;Forum,200;",,
-"op A9,voor Wijkertunnel,richting Amstelveen,Wijkertunnel,richting Alkmaar,richting Amstelveen,richting Amstelveen,Velsertunnel, Velsen-Noord","52.46112,4.67206, Wijkertunnel,100; 52.45783, 4.67083,Alkmaar,52.4632, 4.6542 , Velsertunnel,300;52.4746, 4.6367, Velsen-Noord,200;",,
+"uit Leeuwarden,op Rykswei (N355),bij Jistrum,vanaf Wyldpad_West,uit Groningen,naar UMCG,in Groningen","53.1705,5.7908,Leeuwarden,500; 53.22433, 6.04235,Wyldpad_West,100;53.2233,6.5732,UMCG,250;",,
+"in Maastricht,bij Johan_Willem_Beyenlaan,in Maastricht,uit Maastricht,op Forum,in Maastricht","50.83737,5.71386,Forum,200;",,
+"op A9,voor Wijkertunnel,richting Amstelveen,Wijkertunnel,richting Alkmaar,richting Amstelveen,richting Amstelveen,Velsertunnel, Velsen-Noord","52.46112,4.67206, Wijkertunnel,100; 52.45783, 4.67083,Alkmaar,1000;52.4632, 4.6542 , Velsertunnel,300;52.4746, 4.6367, Velsen-Noord,200;",,
 "Scharsterbrug,op Scharren,uit Wijnjewoude","52.93946,5.76833, Scharren, 1000;53.0579,6.2038,Wijnjewoude,150;",,
 "op A1, tussen [Apeldoorn,Kootwijk],richting Amsterdam,tussen [Apeldoorn,Kootwijk (A1)], uit Harmelen, richting Amsterdam","52.1873, 5.865 ,A1,5000;52.0915,4.9639, Harmelen,200;",,
 "aan Holtdijk,in Markelo,op Holtdijk","52.2520,6.5577,Holtdijk,3000;",,
@@ -80,5 +80,3 @@ Toponiemen,Locaties,,flitsservice_testset.csv
 "op Oud_Vossemeersedijk,bij Tholen,van Nieuwdorp,op Oud_Vossemeersedijk,uit Poortvliet,in Rotterdam","51.5534,4.2257,Oud_Vossemeersedijk,1500;51.4709,3.7398,Nieuwdorp,800;51.5456,4.1447,Poortvliet,800;51.9234,4.2713,Rotterdam,1000;",,
 "kruising [Oosterweg,N57],in Ouddorp,in Zeist,richting Stellendam,uit Ellemeet","51.80846,3.94481,Oosterweg,100;52.1148,5.2628,Zeist,800;51.7299,3.8161,Ellemeet,700",,
 "uit Kampen,langs Europa-allee,hoogte Acacialaan,uit Kampen,uit Kampen","52.54503,5.91816,Acacialaan,50;",,
-"op Sedyk,uit Oosterbierum,van Franeker,in Leeuwarden,naar UMCG, in Groningen",[,,
-

@@ -3,8 +3,7 @@ import overpy
 import time
 import math
 from geopy.exc import GeocoderTimedOut
-from overpy.exception import OverpassTooManyRequests
-from overpy.exception import OverpassGatewayTimeout
+
 from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 from geopy.distance import geodesic
@@ -48,6 +47,8 @@ def orderSent(sentence):
 #         return 0, ADP_list[1:]
 
 def OverpassSearch(query, waittime=3):
+    from overpy.exception import OverpassTooManyRequests
+    from overpy.exception import OverpassGatewayTimeout
     try:
         query_result = api.query(query)
         result =  query_result
@@ -55,7 +56,7 @@ def OverpassSearch(query, waittime=3):
         print("Overpass receives too many requests, waiting", waittime, "seconds.")
         time.sleep(waittime)
         result = OverpassSearch(query,waittime*2)
-    except OverpassGateWayTimeout:
+    except OverpassGatewayTimeout:
         print("Overpass gateway overload, waiting", waittime, "seconds.")
         time.sleep(waittime)
         result = OverpassSearch(query,waittime*2)
@@ -267,3 +268,5 @@ def findLocations(article):
         way_list.extend(way_list_sent)
     boundingbox_list, way_list = mergeLists(boundingbox_list, way_list)
     printResults(boundingbox_list,way_list)
+    print(type(boundingbox_list))
+    return boundingbox_list, way_list

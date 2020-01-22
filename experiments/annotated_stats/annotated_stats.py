@@ -18,7 +18,7 @@ def annotatedToponymStats():
     topo_freq = pd.Series(Counter(toponym_frequency_list), name='number_of_toponyms')
     topo_freq.index.name = 'Number of toponyms'
     topo_freq = topo_freq.sort_index(axis=0)
-    topo_freq.plot(kind='bar', figsize=[13,6], position=0.65, bottom=0.20)
+    topo_freq.plot(kind='bar', figsize=[13,6], y='frequency', position=0.65, bottom=0.20)
     plt.show()
 
 def annotatedLocationStats():
