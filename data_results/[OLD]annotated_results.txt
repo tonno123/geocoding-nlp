@@ -1,0 +1,874 @@
+Hier is het gemiddelde van een wegcoordinatenlijst genomen, dat moet binnen de radius van een annotated punt liggen. Ook een versimpelde spatial identifier extraction, extractADPLOCCombination(). Ook is het centrum van de bounding boxes gepakt, en wordt er gekeken of dat binnen de annotated radius valt. Toponymbron hier is de "toponiemen" kolom uit annotated_flitsservice_testset.csv
+########################################### ARTICLE 0 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Leiden']], ['ON', ['Zwartemeerlaan']]]]
+Road coordinates: Zwartemeerlaan ***********
+distance road: 0.12214155496952142 km
+radius: 100.0
+Accuracy: 0.0
+Accuracy list: [0.0]
+########################################### ARTICLE 1 #######################################
+Predicates found in article:
+[[['ON', ['N35']], ['ON', ['N35']], ['BETWEEN', ['Wierden', 'Nijverdal']], ['ON', ['N35']]]]
+Road coordinates: N35 ***********
+Road coordinates: N35 ***********
+Road coordinates: N35 ***********
+distance road: 1.7893038857850536 km
+radius: 1200.0
+distance road: 11.87825174495875 km
+radius: 1200.0
+distance road: 11.87825174495875 km
+radius: 1200.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0]
+########################################### ARTICLE 2 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Hoofddorp']], ['AT', ['Claus Event Centre']]]]
+boundingbox 2: [['in', ['52.2571959', '52.3440541', '4.6186133', '4.7377859']]]
+Bounding box: ['52.2571959', '52.3440541', '4.6186133', '4.7377859']
+distance bbox: 2.543194750427495 km
+radius: 100.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0]
+########################################### ARTICLE 3 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Twello']], ['IN_LOC', ['Twello']], ['IN_LOC', ['Nijmegen']], ['IN_LOC', ['Twello']], ['ON', ['Binnenweg']], ['IN_LOC', ['Twello']], ['IN_LOC', ['Nijmegen']]]]
+Overpass receives too many requests, waiting 3 seconds.
+boundingbox 2: [['in', ['51.7905891', '51.8946209', '5.7576206', '5.9083469']], ['in', ['52.2207518', '52.2598548', '6.0569036', '6.1435263']], ['in', ['51.7905891', '51.8946209', '5.7576206', '5.9083469']]]
+boundingbox 2: [['in', ['51.7905891', '51.8946209', '5.7576206', '5.9083469']], ['in', ['52.2207518', '52.2598548', '6.0569036', '6.1435263']], ['in', ['51.7905891', '51.8946209', '5.7576206', '5.9083469']]]
+boundingbox 2: [['in', ['51.7905891', '51.8946209', '5.7576206', '5.9083469']], ['in', ['52.2207518', '52.2598548', '6.0569036', '6.1435263']], ['in', ['51.7905891', '51.8946209', '5.7576206', '5.9083469']]]
+Bounding box: ['51.7905891', '51.8946209', '5.7576206', '5.9083469']
+Bounding box: ['52.2207518', '52.2598548', '6.0569036', '6.1435263']
+Bounding box: ['51.7905891', '51.8946209', '5.7576206', '5.9083469']
+Road coordinates: Binnenweg ***********
+distance road: 0.07688383437719053 km
+radius: 150.0
+distance bbox: 48.15646583292027 km
+radius: 150.0
+distance bbox: 0.7291627187665002 km
+radius: 150.0
+distance bbox: 48.15646583292027 km
+radius: 150.0
+Accuracy: 1.0
+distance road: 48.102950309934755 km
+radius: 1000.0
+distance bbox: 0.008031081237463088 km
+radius: 1000.0
+distance bbox: 47.896970956939114 km
+radius: 1000.0
+distance bbox: 0.008031081237463088 km
+radius: 1000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0]
+########################################### ARTICLE 4 #######################################
+Predicates found in article:
+[[['ON', ['Rykswei']], ['AT', ['Jistrum']], ['HEADING', ['UMCG']], ['IN_LOC', ['Groningen']]]]
+boundingbox 2: [['in', ['53.1786103', '53.2649469', '6.4627456', '6.6668727']]]
+Bounding box: ['53.1786103', '53.2649469', '6.4627456', '6.6668727']
+Road coordinates: Rykswei ***********
+distance road: 33.16605927976038 km
+radius: 250.0
+distance bbox: 0.5854559018094756 km
+radius: 250.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 5 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Maastricht']], ['AT', ['Johan Willem Beyenlaan']], ['IN_LOC', ['Maastricht']], ['ON', ['Forum']], ['IN_LOC', ['Maastricht']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Road coordinates: Forum ***********
+distance road: 0.0002621203903649662 km
+radius: 200.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 6 #######################################
+Predicates found in article:
+[[['ON', ['A9']], ['HEADING', ['Amstelveen']], ['HEADING', ['Alkmaar']], ['HEADING', ['Amstelveen']], ['HEADING', ['Amstelveen']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Road coordinates: A9 ***********
+distance road: 14.59972281768049 km
+radius: 1000.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 7 #######################################
+Predicates found in article:
+[[['ON', ['N265']], ['AT', ['Eerdsestraat']]]]
+Road coordinates: N265 ***********
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 8 #######################################
+Predicates found in article:
+[[['ON', ['Scharren']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Road coordinates: Scharren ***********
+distance road: 0.10227831396701421 km
+radius: 1000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 9 #######################################
+Predicates found in article:
+[[['ON', ['A1']], ['BETWEEN', ['Apeldoorn', 'Kootwijk']], ['HEADING', ['Amsterdam']], ['BETWEEN', ['Apeldoorn', 'Kootwijk']], ['HEADING', ['Amsterdam']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Road coordinates: A1 ***********
+distance road: 0.6506914428033851 km
+radius: 5000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0]
+########################################### ARTICLE 10 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Markelo']], ['ON', ['Holtdijk']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Overpass gateway overload, waiting 24 seconds.
+Road coordinates: Holtdijk ***********
+distance road: 0.04548870411129915 km
+radius: 3000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0]
+########################################### ARTICLE 11 #######################################
+Predicates found in article:
+[[['ON', ['Bosscheweg']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Road coordinates: Bosscheweg ***********
+distance road: 3.0403262731871803 km
+radius: 2000.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 12 #######################################
+Predicates found in article:
+[]
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 13 #######################################
+Predicates found in article:
+[[['ON', ['N50']], ['BETWEEN', ['Oss', 'Den Bosch']], ['AT', ['Kruisstraat']], ['HEADING', ['Den Bosch']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+boundingbox 2: [['between', [(51.81591333794164, 5.359042274310134), (51.7689067, 5.5223672), (51.66765471969027, 5.446589267733112), (51.6889351, 5.3031044)]], ['at', ['51.7178214', '51.7382591', '5.3698736', '5.4108873']]]
+Bounding box: ['51.7178214', '51.7382591', '5.3698736', '5.4108873']
+Road coordinates: N50 ***********
+distance road: 101.62792493690846 km
+radius: 2000.0
+distance bbox: 1.9714076009110972 km
+radius: 2000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 14 #######################################
+Predicates found in article:
+[[['AT', ['Ravenstein']], ['BETWEEN', ['Oss', 'Wijchen']], ['BETWEEN', ['Oss', 'Wijchen']]]]
+boundingbox 2: [['at', ['51.7800663', '51.8011518', '5.6312902', '5.6633508']], ['between', [(51.71375864334484, 5.653203357132083), (51.7689067, 5.5223672), (51.8501463338022, 5.611295601287157), (51.8099983, 5.7362233)]], ['between', [(51.71375864334484, 5.653203357132083), (51.7689067, 5.5223672), (51.8501463338022, 5.611295601287157), (51.8099983, 5.7362233)]]]
+boundingbox 2: [['at', ['51.7800663', '51.8011518', '5.6312902', '5.6633508']], ['between', [(51.71375864334484, 5.653203357132083), (51.7689067, 5.5223672), (51.8501463338022, 5.611295601287157), (51.8099983, 5.7362233)]], ['between', [(51.71375864334484, 5.653203357132083), (51.7689067, 5.5223672), (51.8501463338022, 5.611295601287157), (51.8099983, 5.7362233)]]]
+Bounding box: ['51.7800663', '51.8011518', '5.6312902', '5.6633508']
+Bounding box: [(51.71375864334484, 5.653203357132083), (51.7689067, 5.5223672), (51.8501463338022, 5.611295601287157), (51.8099983, 5.7362233)]
+distance bbox: 0.8102334854454946 km
+radius: 200.0
+distance bbox: 1.1185616030837726 km
+radius: 200.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 15 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Emmeloord']], ['ON', ['Marknesserweg']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Road coordinates: Marknesserweg ***********
+distance road: 0.8919034219739979 km
+radius: 2000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 16 #######################################
+Predicates found in article:
+[[['ON', ['A32']], ['HEADING', ['Leeuwarden']], ['HEADING', ['Leeuwarden']], ['AT', ['Akkrum']], ['ON', ['A32']], ['ON', ['A32']], ['HEADING', ['Heerenveen']], ['HEADING', ['Leeuwarden']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Road coordinates: A32 ***********
+Road coordinates: A32 ***********
+Road coordinates: A32 ***********
+distance road: 0.5088593736466894 km
+radius: 3000.0
+distance road: 20.295077276433986 km
+radius: 3000.0
+distance road: 20.295077276433986 km
+radius: 3000.0
+Accuracy: 1.0
+distance road: 13.61061713321088 km
+radius: 1000.0
+distance road: 33.993655588309366 km
+radius: 1000.0
+distance road: 33.993655588309366 km
+radius: 1000.0
+Accuracy: 0.0
+distance road: 12.129744988188483 km
+radius: 1000.0
+distance road: 11.509070451933328 km
+radius: 1000.0
+distance road: 11.509070451933328 km
+radius: 1000.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+########################################### ARTICLE 17 #######################################
+Predicates found in article:
+[[['ON', ['Noorddammerweg']], ['ON', ['Noorddammerweg']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Overpass receives too many requests, waiting 24 seconds.
+Road coordinates: Noorddammerweg ***********
+Road coordinates: Noorddammerweg ***********
+distance road: 0.9776747887164624 km
+radius: 3000.0
+distance road: 0.9776747887164624 km
+radius: 3000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0]
+########################################### ARTICLE 18 #######################################
+Predicates found in article:
+[[['AT', ['Van Abbe']], ['ON', ['Wal']], ['IN_LOC', ['Eindhoven']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Overpass receives too many requests, waiting 24 seconds.
+Overpass receives too many requests, waiting 48 seconds.
+Overpass receives too many requests, waiting 96 seconds.
+Road coordinates: Wal ***********
+distance road: 1.2762861648219177 km
+radius: 500.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 19 #######################################
+Predicates found in article:
+[[['ON', ['Overboeicop']], ['IN_LOC', ['Schoonrewoerd']], ['ON', ['Overboeicop']], ['IN_LOC', ['Schoonrewoerd']]]]
+Road coordinates: Overboeicop ***********
+Road coordinates: Overboeicop ***********
+distance road: 0.9373882215287949 km
+radius: 2000.0
+distance road: 0.9373882215287949 km
+radius: 2000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 20 #######################################
+Predicates found in article:
+[[['AT', ['Escharen']], ['BETWEEN', ['Escharen', 'Langenboom']], ['AT', ['Huuske']], ['IN_LOC', ['Langenboom']]]]
+boundingbox 2: [['at', ['51.7179787', '51.7541882', '5.7094175', '5.7724268']], ['between', [(51.73131229617166, 5.702617482334619), (51.7414147, 5.748328), (51.71302955638666, 5.764576380847731), (51.7005547, 5.728905)]], ['in', ['51.6746028', '51.7264151', '5.6999602', '5.7642669']]]
+boundingbox 2: [['at', ['51.7179787', '51.7541882', '5.7094175', '5.7724268']], ['between', [(51.73131229617166, 5.702617482334619), (51.7414147, 5.748328), (51.71302955638666, 5.764576380847731), (51.7005547, 5.728905)]], ['in', ['51.6746028', '51.7264151', '5.6999602', '5.7642669']]]
+Bounding box: ['51.7179787', '51.7541882', '5.7094175', '5.7724268']
+Bounding box: ['51.6746028', '51.7264151', '5.6999602', '5.7642669']
+distance bbox: 0.7807967357894365 km
+radius: 500.0
+distance bbox: 4.68510588177855 km
+radius: 500.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 21 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Arnhem']]]]
+boundingbox 2: [['in', ['51.9334642', '52.0778905', '5.8029606', '5.9903401']]]
+Bounding box: ['51.9334642', '52.0778905', '5.8029606', '5.9903401']
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 22 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Berkel en Rodenrijs']], ['ON', ['Noordeindseweg']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Road coordinates: Noordeindseweg ***********
+distance road: 0.25631069695158 km
+radius: 1500.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 23 #######################################
+Predicates found in article:
+[[['AT', ['Nassaukade']], ['IN_LOC', ['Amsterdam-West']]]]
+boundingbox 2: [['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']]]
+Bounding box: ['52.2781742', '52.4310638', '4.7287563', '5.0791622']
+distance bbox: 2.90355745587947 km
+radius: 800.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 24 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Well']], ['ON', ['Elsterendijk']], ['INTERSECT', ['Leuken']], ['ON', ['Elsterendijk']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Road coordinates: Elsterendijk ***********
+Road coordinates: Elsterendijk ***********
+distance road: 0.038334797076085815 km
+radius: 100.0
+distance road: 0.038334797076085815 km
+radius: 100.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 25 #######################################
+Predicates found in article:
+[[['ON', ['Dongenseweg']], ['IN_LOC', ['Tilburg']]]]
+Road coordinates: Dongenseweg ***********
+distance road: 0.442780556637449 km
+radius: 1500.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0]
+########################################### ARTICLE 26 #######################################
+Predicates found in article:
+[[['ON', ['N65']], ['IN_LOC', ['Den Bosch']]]]
+Overpass receives too many requests, waiting 3 seconds.
+boundingbox 2: [['in', ['51.6639966', '51.7557341', '5.2064942', '5.3822104']]]
+Bounding box: ['51.6639966', '51.7557341', '5.2064942', '5.3822104']
+Road coordinates: N65 ***********
+distance road: 3.9877512181671113 km
+radius: 5000.0
+distance bbox: 8.28503179676593 km
+radius: 5000.0
+Accuracy: 1.0
+distance road: 14.73346860492635 km
+radius: 1000.0
+distance bbox: 4.095965094134922 km
+radius: 1000.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 27 #######################################
+Predicates found in article:
+[[['ON', ['A2']], ['AT', ['Gronsveld']]]]
+Road coordinates: A2 ***********
+distance road: 0.9740543571203104 km
+radius: 3000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 28 #######################################
+Predicates found in article:
+[[['ON', ['A7']], ['AT', ['Nijland']]]]
+Road coordinates: A7 ***********
+distance road: 0.30916761648479213 km
+radius: 1000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0]
+########################################### ARTICLE 29 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Nieuwerkerk aan den Ijssel']], ['ON', ['Bermweg']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Overpass receives too many requests, waiting 24 seconds.
+Overpass receives too many requests, waiting 48 seconds.
+Road coordinates: Bermweg ***********
+distance road: 0.5892287807551502 km
+radius: 700.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0]
+########################################### ARTICLE 30 #######################################
+Predicates found in article:
+[[['ON', ['A79']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Road coordinates: A79 ***********
+distance road: 4.489531979086956 km
+radius: 20000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0]
+########################################### ARTICLE 31 #######################################
+Predicates found in article:
+[[['ON', ['A16']], ['AT', ['Dordrecht']], ['HEADING', ['Breda']], ['BETWEEN', ['‘s Gravendeel', 'Moerdijkbrug']], ['IN_LOC', ['Dordrecht']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+boundingbox 2: [['in', ['51.7141233', '51.8233583', '4.620404', '4.8846426']]]
+Bounding box: ['51.7141233', '51.8233583', '4.620404', '4.8846426']
+Road coordinates: A16 ***********
+distance road: 3.791909496876353 km
+radius: 3000.0
+distance bbox: 7.835251234539886 km
+radius: 3000.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 32 #######################################
+Predicates found in article:
+[[['INTERSECT', ['Stoeplaan', 'Groen van Prinsterenlaan']], ['IN_LOC', ['Wassenaar']], ['INTERSECT', ['Stoeplaan', 'Groen van Prinsterenlaan']]]]
+boundingbox 2: [['in', ['52.0947726', '52.1926774', '4.2900632', '4.4439394']]]
+Bounding box: ['52.0947726', '52.1926774', '4.2900632', '4.4439394']
+distance bbox: 2.6637580294387297 km
+radius: 50.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0]
+########################################### ARTICLE 33 #######################################
+Predicates found in article:
+[[['ON', ['Laan van Nieuw Oosteinde']], ['IN_LOC', ['Voorburg']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Road coordinates: Laan van Nieuw Oosteinde ***********
+distance road: 0.035568630589924585 km
+radius: 1000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0]
+########################################### ARTICLE 34 #######################################
+Predicates found in article:
+[[['ON', ['Grotewaardweg']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass gateway overload, waiting 12 seconds.
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 35 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Mierlo']], ['INTERSECT', ['Santheuvel-Oost', 'Meester van Busselstraat']]]]
+Overpass receives too many requests, waiting 3 seconds.
+boundingbox 2: [['in', ['51.4183428', '51.460509', '5.5660982', '5.6565094']]]
+Bounding box: ['51.4183428', '51.460509', '5.5660982', '5.6565094']
+distance bbox: 1.1078553924806893 km
+radius: 150.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0]
+########################################### ARTICLE 36 #######################################
+Predicates found in article:
+[[['ON', ['N605']], ['IN_LOC', ['Volkel']], ['HEADING', ['Boekel']]]]
+boundingbox 2: [['in', ['51.6247894', '51.6713988', '5.6265296', '5.7301445']]]
+Bounding box: ['51.6247894', '51.6713988', '5.6265296', '5.7301445']
+Road coordinates: N605 ***********
+distance road: 5.454124549819572 km
+radius: 400.0
+distance bbox: 1.6286946840888423 km
+radius: 400.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
+########################################### ARTICLE 37 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Bergen op Zoom']]]]
+boundingbox 2: [['in', ['51.439667', '51.5536576', '4.2187478', '4.3727982']]]
+Bounding box: ['51.439667', '51.5536576', '4.2187478', '4.3727982']
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
+########################################### ARTICLE 38 #######################################
+Predicates found in article:
+[[['ON', ['Otterloseweg']], ['IN_LOC', ['Wekerom']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Road coordinates: Otterloseweg ***********
+distance road: 0.19460137495429308 km
+radius: 2000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+########################################### ARTICLE 39 #######################################
+Predicates found in article:
+[[['ON', ['Hoevelaken']], ['AT', ['Apeldoorn']], ['HEADING', ['UMC']]]]
+boundingbox 2: [['at', ['52.172638', '52.2502616', '5.8926359', '6.058251']]]
+Bounding box: ['52.172638', '52.2502616', '5.8926359', '6.058251']
+distance bbox: 37.64729314569061 km
+radius: 200.0
+Accuracy: 0.0
+distance bbox: 56.40982734586777 km
+radius: 200.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0]
+########################################### ARTICLE 40 #######################################
+Predicates found in article:
+[[['AT', ['Oldeholtpade']], ['ON', ['N351']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Road coordinates: N351 ***********
+distance road: 1.4282441955742717 km
+radius: 2000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0]
+########################################### ARTICLE 41 #######################################
+Predicates found in article:
+[[['ON', ['Groenloseweg']]]]
+Road coordinates: Groenloseweg ***********
+distance road: 10.296907604120422 km
+radius: 1000.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 42 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Goor']], ['ON', ['Kerkstraat']], ['IN_LOC', ['Goor']], ['ON', ['Kerkstraat']], ['IN_LOC', ['Goor']]]]
+Overpass gateway overload, waiting 3 seconds.
+Road coordinates: Kerkstraat ***********
+Road coordinates: Kerkstraat ***********
+distance road: 0.08535777515293635 km
+radius: 800.0
+distance road: 0.08535777515293635 km
+radius: 800.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 43 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Bant']], ['ON', ['Banterweg']]]]
+Road coordinates: Banterweg ***********
+distance road: 0.03588458866888202 km
+radius: 800.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0]
+########################################### ARTICLE 44 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Hattem']]]]
+boundingbox 2: [['in', ['52.4437656', '52.5096062', '6.0007885', '6.103546']]]
+Bounding box: ['52.4437656', '52.5096062', '6.0007885', '6.103546']
+distance bbox: 0.0027227610139442344 km
+radius: 500.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0]
+########################################### ARTICLE 45 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Venray']], ['IN_LOC', ['Venray']], ['ON', ['Beekweg']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Road coordinates: Beekweg ***********
+distance road: 0.4062792586330655 km
+radius: 2000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0]
+########################################### ARTICLE 46 #######################################
+Predicates found in article:
+[[['IN_LOC', ['De Gulp']], ['IN_LOC', ['Gulpen']], ['AT', ['In Het Diepe Broek']], ['IN_LOC', ['de Gulp']]]]
+boundingbox 2: [['in', ['50.7706091', '50.7732431', '5.8585179', '5.8619555']], ['in', ['50.7825629', '50.8236702', '5.8455159', '5.9163422']], ['in', ['50.7706091', '50.7732431', '5.8585179', '5.8619555']]]
+boundingbox 2: [['in', ['50.7706091', '50.7732431', '5.8585179', '5.8619555']], ['in', ['50.7825629', '50.8236702', '5.8455159', '5.9163422']], ['in', ['50.7706091', '50.7732431', '5.8585179', '5.8619555']]]
+boundingbox 2: [['in', ['50.7706091', '50.7732431', '5.8585179', '5.8619555']], ['in', ['50.7825629', '50.8236702', '5.8455159', '5.9163422']], ['in', ['50.7706091', '50.7732431', '5.8585179', '5.8619555']]]
+Bounding box: ['50.7706091', '50.7732431', '5.8585179', '5.8619555']
+Bounding box: ['50.7825629', '50.8236702', '5.8455159', '5.9163422']
+Bounding box: ['50.7706091', '50.7732431', '5.8585179', '5.8619555']
+distance bbox: 5.719331120478753 km
+radius: 200.0
+distance bbox: 1.965291570032108 km
+radius: 200.0
+distance bbox: 5.719331120478753 km
+radius: 200.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 47 #######################################
+Predicates found in article:
+[[['AT', ['Wapserveen']], ['ON', ['van Helomaweg']], ['ON', ['Van Helomaweg']], ['IN_LOC', ['Havelte']], ['IN_LOC', ['Havelte']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Overpass receives too many requests, waiting 24 seconds.
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Road coordinates: van Helomaweg ***********
+Road coordinates: Van Helomaweg ***********
+distance road: 2.01664373771252 km
+radius: 3000.0
+distance road: 2.624514875929535 km
+radius: 3000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 48 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Denekamp']], ['ON', ['Ootmarsumsestraat']], ['IN_LOC', ['Denekamp']], ['INTERSECT', ['Ootmarsumsestraat', 'Brinkstraat']], ['IN_LOC', ['Denekamp']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Road coordinates: Ootmarsumsestraat ***********
+Road coordinates: crossroads ***********
+distance road: 2.8628061449263913 km
+radius: 50.0
+distance road: 0.0005147377742830153 km
+radius: 50.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0]
+########################################### ARTICLE 49 #######################################
+Predicates found in article:
+[[['ON', ['A76']], ['IN_LOC', ['Heerlen']]]]
+Overpass receives too many requests, waiting 3 seconds.
+boundingbox 2: [['in', ['50.8184032', '50.9342223', '5.9163049', '6.0263794']]]
+Bounding box: ['50.8184032', '50.9342223', '5.9163049', '6.0263794']
+Road coordinates: A76 ***********
+distance road: 7.30653219001721 km
+radius: 8000.0
+distance bbox: 1.126321397539976 km
+radius: 8000.0
+WARNING: bbox and waylist both have a suited result. ways: 1.0  Bbox: 1.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0]
+########################################### ARTICLE 50 #######################################
+Predicates found in article:
+[[['BETWEEN', ['Enkhuizen', '']], ['IN_LOC', ['Lelystad']], ['HEADING', ['Sofia-ziekenhuis']], ['IN_LOC', ['Zwolle']], ['HEADING', ['Enkhuizen']]]]
+boundingbox 2: [['in', ['52.3843774', '52.6928447', '5.0745865', '5.6058706']], ['in', ['52.4405307', '52.5879404', '6.0036191', '6.2108108']]]
+boundingbox 2: [['in', ['52.3843774', '52.6928447', '5.0745865', '5.6058706']], ['in', ['52.4405307', '52.5879404', '6.0036191', '6.2108108']]]
+Bounding box: ['52.3843774', '52.6928447', '5.0745865', '5.6058706']
+Bounding box: ['52.4405307', '52.5879404', '6.0036191', '6.2108108']
+distance bbox: 53.28104122575684 km
+radius: 500.0
+distance bbox: 1.1624746263751913 km
+radius: 500.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 51 #######################################
+Predicates found in article:
+[[['ON', ['Noorddammerweg']], ['IN_LOC', ['Amstelveen']]]]
+Road coordinates: Noorddammerweg ***********
+distance road: 0.829700669005949 km
+radius: 2000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 52 #######################################
+Predicates found in article:
+[[['ON', ['Rivierdijk']], ['AT', ['Kanaaldijk-Zuid']], ['IN_LOC', ['Hardinxveld Giessendam']], ['HEADING', ['Erasmus MC']], ['IN_LOC', ['Rotterdam']]]]
+boundingbox 2: [['in', ['51.8616672', '51.9942816', '4.3793095', '4.6018083']]]
+Bounding box: ['51.8616672', '51.9942816', '4.3793095', '4.6018083']
+Road coordinates: Rivierdijk ***********
+distance road: 0.9139739651697002 km
+radius: 150.0
+distance bbox: 28.016741645407787 km
+radius: 150.0
+Accuracy: 0.0
+distance road: 29.313703175075943 km
+radius: 500.0
+distance bbox: 2.414482554955067 km
+radius: 500.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0]
+########################################### ARTICLE 53 #######################################
+Predicates found in article:
+[[['ON', ['West-Terschelling']], ['ON', ['Gerrit Knoplaan']], ['ON', ['West']], ['INTERSECT', ['Europalaan']], ['ON', ['Gerrit Knoplaan']], ['ON', ['West']], ['INTERSECT', ['Europalaan']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Overpass receives too many requests, waiting 24 seconds.
+Overpass receives too many requests, waiting 3 seconds.
+Road coordinates: West ***********
+Road coordinates: West ***********
+Road coordinates: crossroads ***********
+Road coordinates: crossroads ***********
+distance road: 53.56675903091724 km
+radius: 100.0
+distance road: 53.56675903091724 km
+radius: 100.0
+distance road: 0.0010512408386323022 km
+radius: 100.0
+distance road: 0.0010512408386323022 km
+radius: 100.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0]
+########################################### ARTICLE 54 #######################################
+Predicates found in article:
+[]
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0]
+########################################### ARTICLE 55 #######################################
+Predicates found in article:
+[[['ON', ['Zuigerplasdreef']], ['IN_LOC', ['Lelystad']], ['IN_LOC', ['Amsterdam']], ['IN_LOC', ['Lelystad']], ['ON', ['Zuigerplasdreef']], ['AT', ['Larserdreef']], ['IN_LOC', ['Amsterdam']], ['IN_LOC', ['Amsterdam']]]]
+boundingbox 2: [['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']], ['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']], ['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']]]
+boundingbox 2: [['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']], ['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']], ['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']]]
+boundingbox 2: [['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']], ['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']], ['in', ['52.2781742', '52.4310638', '4.7287563', '5.0791622']]]
+Bounding box: ['52.2781742', '52.4310638', '4.7287563', '5.0791622']
+Bounding box: ['52.2781742', '52.4310638', '4.7287563', '5.0791622']
+Bounding box: ['52.2781742', '52.4310638', '4.7287563', '5.0791622']
+Road coordinates: Zuigerplasdreef ***********
+Road coordinates: Zuigerplasdreef ***********
+distance road: 2.459497555847458 km
+radius: 100.0
+distance road: 2.459497555847458 km
+radius: 100.0
+distance bbox: 42.20407003991166 km
+radius: 100.0
+distance bbox: 42.20407003991166 km
+radius: 100.0
+distance bbox: 42.20407003991166 km
+radius: 100.0
+Accuracy: 0.0
+distance road: 43.090702121932246 km
+radius: 1000.0
+distance road: 43.090702121932246 km
+radius: 1000.0
+distance bbox: 0.00943114563303706 km
+radius: 1000.0
+distance bbox: 0.00943114563303706 km
+radius: 1000.0
+distance bbox: 0.00943114563303706 km
+radius: 1000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 56 #######################################
+Predicates found in article:
+[[['ON', ['1e Tieflaarsestraat']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Overpass receives too many requests, waiting 12 seconds.
+Road coordinates: 1e Tieflaarsestraat ***********
+distance road: 0.20626367574616364 km
+radius: 1500.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0]
+########################################### ARTICLE 57 #######################################
+Predicates found in article:
+[[['ON', ['N224']], ['AT', ['Ede']], ['HEADING', ['Barneveld']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 6 seconds.
+Road coordinates: N224 ***********
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0]
+########################################### ARTICLE 58 #######################################
+Predicates found in article:
+[[['INTERSECT', ['Erasmusweg', 'Vrederustlaan']], ['HEADING', ['HagaZiekenhuis/locatie Leyweg']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Road coordinates: crossroads ***********
+distance road: 0.017859623648285982 km
+radius: 100.0
+Accuracy: 1.0
+distance road: 2.22810433948493 km
+radius: 500.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 59 #######################################
+Predicates found in article:
+[[['ON', ['A73']], ['AT', ['Boxmeer']], ['ON', ['A73']], ['BETWEEN', ['Boxmeer', 'Venlo']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Road coordinates: A73 ***********
+Road coordinates: A73 ***********
+distance road: 1.029220372892042 km
+radius: 4000.0
+distance road: 20.656796437808385 km
+radius: 4000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 60 #######################################
+Predicates found in article:
+[]
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 61 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Burgum']], ['ON', ['Menno van Coehoornweg']], ['IN_LOC', ['Burgum']], ['HEADING', ['MCL']], ['IN_LOC', ['Leeuwarden']]]]
+boundingbox 2: [['in', ['53.1583048', '53.2410981', '5.7297688', '5.9070999']]]
+Bounding box: ['53.1583048', '53.2410981', '5.7297688', '5.9070999']
+Road coordinates: Menno van Coehoornweg ***********
+distance road: 0.21466848291985788 km
+radius: 800.0
+distance bbox: 12.507494800822162 km
+radius: 800.0
+Accuracy: 1.0
+distance road: 13.737788411031019 km
+radius: 200.0
+distance bbox: 1.5077543976512433 km
+radius: 200.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 62 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Putten']]]]
+boundingbox 2: [['in', ['52.2023362', '52.2933027', '5.474192', '5.6836421']]]
+Bounding box: ['52.2023362', '52.2933027', '5.474192', '5.6836421']
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0]
+########################################### ARTICLE 63 #######################################
+Predicates found in article:
+[[['ON', ['Leerlooierstraat']], ['INTERSECT', ['Hoefsmidstraat']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass receives too many requests, waiting 3 seconds.
+Road coordinates: crossroads ***********
+distance road: 0.06616703809893558 km
+radius: 50.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+########################################### ARTICLE 64 #######################################
+Predicates found in article:
+[[['ON', ['Tweekarspelenweg']], ['BETWEEN', ['Winschoten', 'Bellingwolde']], ['HEADING', ['Bellingwolde']], ['IN_LOC', ['Groningen']]]]
+Overpass receives too many requests, waiting 3 seconds.
+boundingbox 2: [['in', ['53.1786103', '53.2649469', '6.4627456', '6.6668727']]]
+Bounding box: ['53.1786103', '53.2649469', '6.4627456', '6.6668727']
+Road coordinates: Tweekarspelenweg ***********
+distance road: 0.36993103146189105 km
+radius: 5000.0
+distance bbox: 37.84995549391827 km
+radius: 5000.0
+Accuracy: 1.0
+distance road: 33.94382192792959 km
+radius: 700.0
+distance bbox: 3.7740476751258365 km
+radius: 700.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 65 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Baarle-Nassau']], ['ON', ['Bredaseweg']]]]
+Road coordinates: Bredaseweg ***********
+distance road: 0.3399993672335685 km
+radius: 2000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0]
+########################################### ARTICLE 66 #######################################
+Predicates found in article:
+[[['IN_LOC', ['Brugge']], ['ON', ['Oost Westweg']], ['IN_LOC', ['Wissenkerke']], ['ON', ['Oost Westweg']], ['HEADING', ['Goes']], ['HEADING', ['Kamperland']], ['IN_LOC', ['Goes']], ['HEADING', ['Geersdijk']], ['HEADING', ['Kamperland']], ['IN_LOC', ['Goes']], ['HEADING', ['Erasmus MC']], ['IN_LOC', ['Rotterdam']], ['IN_LOC', ['Goes']]]]
+Overpass receives too many requests, waiting 3 seconds.
+Overpass gateway overload, waiting 6 seconds.
+boundingbox 2: [['in', ['51.846445', '51.8469', '4.5086756', '4.5087']], ['in', ['51.5681108', '51.6021995', '3.7292158', '3.8073699']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.8616672', '51.9942816', '4.3793095', '4.6018083']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']]]
+boundingbox 2: [['in', ['51.846445', '51.8469', '4.5086756', '4.5087']], ['in', ['51.5681108', '51.6021995', '3.7292158', '3.8073699']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.8616672', '51.9942816', '4.3793095', '4.6018083']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']]]
+boundingbox 2: [['in', ['51.846445', '51.8469', '4.5086756', '4.5087']], ['in', ['51.5681108', '51.6021995', '3.7292158', '3.8073699']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.8616672', '51.9942816', '4.3793095', '4.6018083']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']]]
+boundingbox 2: [['in', ['51.846445', '51.8469', '4.5086756', '4.5087']], ['in', ['51.5681108', '51.6021995', '3.7292158', '3.8073699']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.8616672', '51.9942816', '4.3793095', '4.6018083']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']]]
+boundingbox 2: [['in', ['51.846445', '51.8469', '4.5086756', '4.5087']], ['in', ['51.5681108', '51.6021995', '3.7292158', '3.8073699']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.8616672', '51.9942816', '4.3793095', '4.6018083']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']]]
+boundingbox 2: [['in', ['51.846445', '51.8469', '4.5086756', '4.5087']], ['in', ['51.5681108', '51.6021995', '3.7292158', '3.8073699']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']], ['in', ['51.8616672', '51.9942816', '4.3793095', '4.6018083']], ['in', ['51.4791216', '51.5269203', '3.8554984', '3.9316616']]]
+Bounding box: ['51.846445', '51.8469', '4.5086756', '4.5087']
+Bounding box: ['51.5681108', '51.6021995', '3.7292158', '3.8073699']
+Bounding box: ['51.4791216', '51.5269203', '3.8554984', '3.9316616']
+Bounding box: ['51.4791216', '51.5269203', '3.8554984', '3.9316616']
+Bounding box: ['51.8616672', '51.9942816', '4.3793095', '4.6018083']
+Bounding box: ['51.4791216', '51.5269203', '3.8554984', '3.9316616']
+distance bbox: 110.50410060857858 km
+radius: 1000.0
+distance bbox: 52.39572857495073 km
+radius: 1000.0
+distance bbox: 53.95958060166752 km
+radius: 1000.0
+distance bbox: 53.95958060166752 km
+radius: 1000.0
+distance bbox: 115.0450224980203 km
+radius: 1000.0
+distance bbox: 53.95958060166752 km
+radius: 1000.0
+Accuracy: 0.0
+distance bbox: 59.97756568698259 km
+radius: 100.0
+distance bbox: 1.1932464281533506 km
+radius: 100.0
+distance bbox: 12.510663246456224 km
+radius: 100.0
+distance bbox: 12.510663246456224 km
+radius: 100.0
+distance bbox: 63.94700233983122 km
+radius: 100.0
+distance bbox: 12.510663246456224 km
+radius: 100.0
+Accuracy: 0.0
+distance bbox: 57.37108911406214 km
+radius: 500.0
+distance bbox: 12.401224495804472 km
+radius: 500.0
+distance bbox: 0.2658331756721171 km
+radius: 500.0
+distance bbox: 0.2658331756721171 km
+radius: 500.0
+distance bbox: 62.89163989315168 km
+radius: 500.0
+distance bbox: 0.2658331756721171 km
+radius: 500.0
+Accuracy: 1.0
+distance bbox: 7.714879561527688 km
+radius: 500.0
+distance bbox: 60.43660259562789 km
+radius: 500.0
+distance bbox: 60.33779771771304 km
+radius: 500.0
+distance bbox: 60.33779771771304 km
+radius: 500.0
+distance bbox: 2.414482554955067 km
+radius: 500.0
+distance bbox: 60.33779771771304 km
+radius: 500.0
+Accuracy: 0.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0]
+########################################### ARTICLE 67 #######################################
+Predicates found in article:
+[[['ON', ['A10']], ['AT', ['Amsterdam']], ['HEADING', ['Watergraafsmeer']]]]
+Road coordinates: A10 ***********
+distance road: 5.757302430676317 km
+radius: 7000.0
+Accuracy: 1.0
+Accuracy list: [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0]
+
+*********************************************************************************************************************************
+*********************************************************************************************************************************
+*********************************************************************************************************************************
+
+
