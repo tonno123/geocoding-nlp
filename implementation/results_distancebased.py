@@ -11,6 +11,7 @@ import evaluation_functions as eval
 
 data = import_json.import_data_json('../data/testsets/flitsservice_testset.json', 80)
 input_data = mine_json.get_location_descriptions_json(data, nlp)
+print(input_data)
 articlelist = extract.extractADPLOCCombination(input_data)
 article_pred_list = extract.NLtoPredicate(articlelist)
 article_pred_list = extract.deleteDuplicateEntries(article_pred_list)
@@ -26,12 +27,13 @@ for i in range(0,80):
     print("Predicates found in article:")
     print(article_pred_list[i])
     bbox, way = geomapping.findLocations(article_pred_list[i])
-    tmp_dist, tmp_ratio, tmp_notfound = results2.calculate_distance(annotated[i], bbox, way)
+    tmp_dist, tmp_ratio, tmp_notfound = eval.calculate_distance(annotated[i], bbox, way)
     distance_list.extend(tmp_dist)
     dr_ratio_list.extend(tmp_ratio)
     not_found = not_found + tmp_notfound
     print("Distance list:", distance_list)
     print("Dist/rad ratio:", dr_ratio_list)
+    print("Not found count:", not_found)
 print("Average distance:", sum(distance_list) / len(distance_list))
 print("Average distance/radius ratio:", sum(dr_ratio_list) / len(dr_ratio_list))
 print("Number of not found locations:", not_found)
