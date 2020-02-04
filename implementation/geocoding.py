@@ -11,7 +11,7 @@ from geopy.distance import geodesic
 import copy
 
 
-nom = Nominatim(user_agent="geocaching_thesis")
+nom = Nominatim(user_agent="geocoding_thesis")
 api = overpy.Overpass()
 
 NominatimResultList = []
@@ -34,18 +34,6 @@ def orderSent(sentence):
         if sentence[i][0] is 'INTERSECT':
             sentence.append(sentence.pop(i))
     return sentence
-
-# def getMostImportantADP(ADP_list):
-#     if 'IN' in ADP_list:
-#         index = ADP_list.index('IN')
-#         ADP_list.remove('IN')
-#         return index, ADP_list
-#     if 'AT' in ADP_list:
-#         index = ADP_list.index('AT')
-#         ADP_list.remove('AT')
-#         return index, ADP_list
-#     else:
-#         return 0, ADP_list[1:]
 
 def OverpassSearch(query, waittime=3):
     from overpy.exception import OverpassTooManyRequests
@@ -219,7 +207,7 @@ def mergeLists(bbox_list, way_list):
     way_list_new = []
     for way in way_list:
 
-        if way[0] is 'road' or way[0] is 'crossroads':
+        if way[0] is 'street' or way[0] is 'crossroads':
             for bbox in bbox_list:
                 result = CoordsInBoundingbox(way[-1], bbox[1])
                 if result:

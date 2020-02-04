@@ -6,7 +6,7 @@ nlp = spacy.load('nl_core_news_sm')
 import import_data_json as import_json
 import mine_location_descriptions_json as mine_json
 import spatial_identifier_extraction as extract
-import geomapping
+import geocoding
 import evaluation_functions as eval
 
 data = import_json.import_data_json('../data/flitsservice_trainset.json', 335)
@@ -24,6 +24,6 @@ for i in range(333,1500):
     print("Predicates found in article:")
     print(articlelist[i])
     print(article_pred_list[i])
-    #bbox, way = geomapping.findLocations(article_pred_list[i])
-    #print("Found bounding boxes:", bbox)
-    #print("Found roads:", way)
+    bbox, way = geocoding.findLocations(article_pred_list[i])
+    print("Found bounding boxes:", bbox)
+    print("Found roads:", way)
