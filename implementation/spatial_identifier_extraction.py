@@ -1,5 +1,5 @@
 
-MARKER_WORDS = ['in', 'op', 'over', 'bij', 'hoogte', 'richting', 'naar', 'tussen', 'kruising','kruispunt','te', 'splitsing']
+MARKER_WORDS = ['in', 'op', 'over', 'te', 'bij', 'nabij', 'hoogte', 'richting', 'naar', 'tussen', 'kruising','kruispunt', 'splitsing', 't-splitsing']
 
 def extractADPLOC(input_data):
     articlelist = []
@@ -19,7 +19,7 @@ def extractADPLOC(input_data):
                             ADP_LOC = [[], [word.text[3:].replace("_", " ")]]
                         else:
                             ADP_LOC[1].insert(0, word.text[3:].replace("_", " "))
-                    elif loc_detected and word.text in MARKER_WORDS:
+                    elif loc_detected and word.lower_ in MARKER_WORDS:
                         ADP_LOC[0].insert(0, word.lower_)
                 spanlist2.insert(0, ADP_LOC)
             sentencelist.append(spanlist2)
@@ -38,19 +38,21 @@ def chooseADP(ADPlist):
         return result_list[-1]
 
 def predicateSwitcher(ADP):
-    switcher = {
+    switcher = { #nabij?
         'op'        : 'ON',
         'over'      : 'ON',
         'te'        : 'IN_LOC',
         'in'        : 'IN_LOC',
         'bij'       : 'AT',
+        'nabij'     : 'AT',
         'hoogte'    : 'AT',
         'richting'  : 'HEADING',
         'naar'      : 'HEADING',
         'tussen'    : 'BETWEEN',
         'kruising'  : 'INTERSECT',
         'kruispunt' : 'INTERSECT',
-        'splitsing' : 'INTERSECT'
+        'splitsing' : 'INTERSECT',
+        't-splitsing':'INTERSECT'
     }
     return switcher.get(ADP)
 

@@ -123,7 +123,7 @@ def intersect(roads, boundingbox_list_sent, way_list_sent):
         way_list_sent.append(['intersect',roads])
         return boundingbox_list_sent, way_list_sent
 
-    query_result = OverpassQuery(roads)
+    query_result = OverpassQuery([roads[0], roads[1]])
     if query_result:
         result_list = []
         for node in query_result.nodes:
@@ -186,7 +186,7 @@ def on(roadname, boundingbox_list_sent, way_list_sent):
             if isHighway(roadname[0]):
                 way_list_sent.append(["highway", roadname[0],result])
             else:
-                way_list_sent.append(["road", roadname[0], result])
+                way_list_sent.append(["street", roadname[0], result])
     return boundingbox_list_sent, way_list_sent
 
 def at(location, boundingbox_list_sent, way_list_sent):

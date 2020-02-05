@@ -4,7 +4,7 @@ MARKER_WORDS = ['in', 'op', 'over', 'bij', 'hoogte', 'richting', 'naar', 'tussen
 import pandas as pd
 
 def import_annotated_results():
-    df = pd.read_csv('../data/annotated/annotated_flitsservice_testset.csv', skipinitialspace=True)
+    df = pd.read_csv('../data/testsets/flitsservice_testset_annotations.csv', skipinitialspace=True)
     toponyms = df['Toponiemen']
     locations = df['Locaties']
     return toponyms, locations
