@@ -3,17 +3,17 @@ from spacy.pipeline import merge_entities
 import json
 nlp = spacy.load('nl_core_news_sm')
 
-from jsonNER_implementation import import_data_json as import_json
-from jsonNER_implementation import mine_location_descriptions_json as mine_json
-from jsonNER_implementation import spatial_identifier_extraction as extract
-import geomapping
+import import_data_json as import_json
+import mine_location_descriptions_json as mine_json
+import spatial_identifier_extraction as extract
+import geocoding
 import evaluation_functions as eval
 
 data = import_json.import_data_json('../data/testsets/flitsservice_testset.json', 80)
 input_data = mine_json.get_location_descriptions_json(data, nlp)
 print(input_data)
-articlelist = extract.extractADPLOCCombination(input_data)
-article_pred_list = extract.NLtoPredicate(articlelist)
+articlelist = extract.extractADPLOC(input_data)
+article_pred_list = extract.ADPLOCtoPredicate(articlelist)
 article_pred_list = extract.deleteDuplicateEntries(article_pred_list)
 
 toponyms, annotated = eval.import_annotated_results()
@@ -26,7 +26,7 @@ for i in range(0,80):
     print("########################################### ARTICLE", i,"#######################################")
     print("Predicates found in article:")
     print(article_pred_list[i])
-    bbox, way = geomapping.findLocations(article_pred_list[i])
+    bbox, way = geocoding.findLocations(article_pred_list[i])
     tmp_dist, tmp_ratio, tmp_notfound = eval.calculate_distance(annotated[i], bbox, way)
     distance_list.extend(tmp_dist)
     dr_ratio_list.extend(tmp_ratio)

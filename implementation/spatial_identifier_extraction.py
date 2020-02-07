@@ -91,32 +91,3 @@ def deleteDuplicateEntries(articlelist):
             i = i+1
             new_articlelist.append(article)
     return new_articlelist
-
-#articlelist = extractADPLOCCombination(input_data)
-#article_pred_list = NLtoPredicate(articlelist)
-#print(article_pred_list)
-# words = []
-# span_counter = 0
-# span_location = {}
-#
-# articlelist = []
-# total_article_n = len(input_data)
-# for article_n in range(total_article_n):
-#     sentencelist = []
-#     total_sentence_n = len(input_data[article_n])
-#     for sentence_n in range(total_sentence_n):
-#         spanlist = []
-#         total_span_n = len(input_data[article_n][sentence_n])
-#         for span_n in range(total_span_n):
-#             for token in input_data[article_n][sentence_n][span_n]:
-#                 if token.ent_type_ in ['GPE', 'FAC', 'LOC', 'NORP']:
-#                     spanlist.append('LOC' + token.text)
-#                 elif token.pos_ == 'ADP' or token.text in ['richting', 'hoogte', 'kruising']:
-#                     spanlist.append('ADP' + token.text)
-#                 #else:
-#                 #    spanlist.append('#')
-#             #new_span = new_span.rpartition("#loc")  # more filtering required here
-#             #new_span = new_span[0] + new_span[1]
-#         sentencelist.append(spanlist)
-#     articlelist.append(sentencelist)
-# print(articlelist)

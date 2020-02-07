@@ -157,6 +157,22 @@ def between(location, bbox_list_sent, way_list_sent):
         bbox_list_sent.append(['between',[(point1_x,point1_y),(lat1,lon1),(point2_x,point2_y),(lat2,lon2)]])
     return bbox_list_sent, way_list_sent
 
+def at(location, boundingbox_list_sent, way_list_sent):
+    place = []
+    result_list = NominatimSearch(location)
+    if result_list:
+        for result in result_list:
+            if result.raw.get('class') == 'boundary':
+                boundingbox_list_sent.append(['at', result.raw.get('boundingbox')])
+                return boundingbox_list_sent, way_list_sent
+            elif result.raw.get('class') == 'place' and not place:
+                place = result.raw.get('boundingbox')
+        if place:
+            boundingbox_list_sent.append(['at', place])
+        else:
+            boundingbox_list_sent.append(['at', result_list[0].raw.get('boundingbox')])
+    return boundingbox_list_sent, way_list_sent
+
 def in_loc(location, boundingbox_list_sent, way_list_sent):
     place = []
     result_list = NominatimSearch(location)
@@ -187,20 +203,6 @@ def on(roadname, boundingbox_list_sent, way_list_sent):
                 way_list_sent.append(["highway", roadname[0],result])
             else:
                 way_list_sent.append(["street", roadname[0], result])
-    return boundingbox_list_sent, way_list_sent
-
-def at(location, boundingbox_list_sent, way_list_sent):
-    place = []
-    result_list = NominatimSearch(location)
-    if result_list:
-        for result in result_list:
-            if result.raw.get('class') == 'boundary':
-                boundingbox_list_sent.append(['at', result.raw.get('boundingbox')])
-                return boundingbox_list_sent, way_list_sent
-            elif result.raw.get('class') == 'place' and not place:
-                place = result.raw.get('boundingbox')
-        if place:
-            boundingbox_list_sent.append(['at', place])
     return boundingbox_list_sent, way_list_sent
 
 def mergeLists(bbox_list, way_list):
