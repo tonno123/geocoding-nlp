@@ -7,9 +7,8 @@ import import_data_json as import_json
 import mine_location_descriptions_json as mine_json
 import spatial_identifier_extraction as extract
 import geocoding
-import evaluation_functions as eval
 
-data = import_json.import_data_json('../data/flitsservice_trainset.json', 335)
+data = import_json.import_data_json('../data/flitsservice_trainset.json')
 input_data = mine_json.get_location_descriptions_json(data, nlp)
 articlelist = extract.extractADPLOC(input_data)
 article_pred_list = extract.ADPLOCtoPredicate(articlelist)
@@ -17,7 +16,7 @@ article_pred_list = extract.deleteDuplicateEntries(article_pred_list)
 
 bbox_list = []
 way_list = []
-for i in range(333,1500):
+for i in range(0,4998):
     print("########################################### ARTICLE", i,"#######################################")
     print(data[i])
     print(input_data[i])
